@@ -14,6 +14,17 @@ title: Proposal Process
 
 **Technical Leads:** Individuals within Microsoft who have technical authority and responsibility for the design and implementation of proposals.
 
+## Definitions of Artifacts
+
+Prior to this process teams have used formal and informal documents to capture ideas, proposals, and specifications for new features and changes. This section defines the key artifacts used in the current process, and aligns the terminology for consistency. Each artifact serves a distinct purpose and audience, ensuring clarity and effective communication throughout the development lifecycle.
+
+| Term | Audience | Purpose | Location |
+|------|----------|-------------|----------|
+| Proposal | Implementers and stakeholders | Drives experimentation and development of a feature as an evolving and living document. Proivides visibility and alignment while enabling collaboration and feedback through the development cycle. | May live in the public or all partner shared proposal repositories. |
+| Specification | Implementers and experienced users | Provides a detailed, finalized, authoritative reference for the behavior of a feature. | May be maintained in team-specific locations or the shared public repository. In-progress specifications may also be maintained in private repositories. |
+| User Guide | End users | Explains how to use a feature or set of features. | May be maintained in team-specific locations; the default location is learn.microsoft.com. |
+| Samples | End users | Code examples and sample projects that demonstrate how to use a feature or set of features. | May be maintained in team-specific locations; the default location is the DirectX-Samples repository. |
+
 ## Goals and Principles
 
 This process adopts the high-level goals:
