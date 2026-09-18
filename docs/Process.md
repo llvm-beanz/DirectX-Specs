@@ -67,6 +67,8 @@ The _Public_ repository is a git repository hosted publicly on GitHub.
 
 * Do not manually include a changelog.
 * Do not manually write a table of contents.
+* Avoid unncessary duplication of content.
+* Follow the guidance of the [technical-documentation skill](/.github/skills/technical-documentation/SKILL.md), and use it for review.
 
 ## Idea intake paths
 
