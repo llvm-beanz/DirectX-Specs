@@ -29,8 +29,9 @@ Prior to this process teams have used formal and informal documents to capture i
 
 This process adopts the high-level goals:
 
-- Low barrier of entry for new ideas.
+- Low barrier of entry for new ideas and feedback.
 - Increase visibility into the state of each major development effort.
+- Encourage collaboration and alignment across teams within SiGMA and with external partners.
 - Provide consistency with clearly defined criteria and expectations for all parties involved.
 - Move as much information into the open as possible as early as possible.
 - Adapt as necessary to maintain efficiency and quality.
@@ -65,10 +66,8 @@ The _Public_ repository is a git repository hosted publicly on GitHub.
 
 ## Macro proposal guidelines
 
-* Do not manually include a changelog.
-* Do not manually write a table of contents.
-* Avoid unncessary duplication of content.
 * Follow the guidance of the [technical-documentation skill](/.github/skills/technical-documentation/SKILL.md), and use it for review.
+* Follow the guidance of the [markdown skill](/.github/skills/markdown/SKILL.md), and use it for review.
 
 ## Idea intake paths
 
