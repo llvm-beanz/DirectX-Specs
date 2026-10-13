@@ -29,6 +29,7 @@ Prior to this process teams have used formal and informal documents to capture i
 
 This process adopts the high-level goals:
 
+- Unify disparate processes for developing features.
 - Low barrier of entry for new ideas and feedback.
 - Increase visibility into the state of each major development effort.
 - Encourage collaboration and alignment across teams within SiGMA and with external partners.
