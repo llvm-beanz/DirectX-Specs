@@ -42,6 +42,7 @@ The process is based on a set of foundational principles:
 - **Progressive requirements:** Each stage in the proposal lifecycle introduces additional requirements that the proposal must satisfy to progress.
 - **Visibility:** Proposals, their state, and decisions associated with them must be tracked and visible either in the document itself, or in associated metadata (git history, issues, meeting minutes, etc).
 - **Consensus-based decision making:** Decisions should be made by consensus whenever possible. Microsoft Leadership should intervene when consensus cannot be reached.
+- **Human Review:** Every document is intended to be reviewed and consumed by humans, and each change to a document must be reviewed by at least one person other than the author.
 
 ## Scope
 
