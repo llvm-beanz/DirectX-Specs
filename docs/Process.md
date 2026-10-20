@@ -20,7 +20,7 @@ Prior to this process teams have used formal and informal documents to capture i
 
 | Term | Audience | Purpose | Location |
 |------|----------|-------------|----------|
-| Proposal | Implementers and stakeholders | Drives experimentation and development of a feature as an evolving and living document. Proivides visibility and alignment while enabling collaboration and feedback through the development cycle. | May live in the public or all partner shared proposal repositories. |
+| Proposal | Implementers and stakeholders | Drives experimentation and development of a feature as an evolving and living document. Provides visibility and alignment while enabling collaboration and feedback through the development cycle. | May live in the public or all partner shared proposal repositories. |
 | Specification | Implementers and experienced users | Provides a detailed, finalized, authoritative reference for the behavior of a feature. | May be maintained in team-specific locations or the shared public repository. In-progress specifications may also be maintained in private repositories. |
 | User Guide | End users | Explains how to use a feature or set of features. | May be maintained in team-specific locations; the default location is learn.microsoft.com. |
 | Samples | End users | Code examples and sample projects that demonstrate how to use a feature or set of features. | May be maintained in team-specific locations; the default location is the DirectX-Samples repository. |
@@ -43,6 +43,7 @@ The process is based on a set of foundational principles:
 - **Progressive requirements:** Each stage in the proposal lifecycle introduces additional requirements that the proposal must satisfy to progress.
 - **Visibility:** Proposals, their state, and decisions associated with them must be tracked and visible either in the document itself, or in associated metadata (git history, issues, meeting minutes, etc).
 - **Consensus-based decision making:** Decisions should be made by consensus whenever possible. Microsoft Leadership should intervene when consensus cannot be reached.
+  > consider a bit more detail on "consensus".  One form of consensus is a Microsoft engineer discussing features with each IHV separately (when the details may be private to them) and finding a solution that addresses the needs of all the stakeholders.  As opposed to all the stakeholders coming to consensus in a shared dialog.  I suppose the nuance is that there can be different paths to consensus.
 - **Human Review:** Every document is intended to be reviewed and consumed by humans, and each change to a document must be reviewed by at least one person other than the author.
 
 ## Scope
@@ -61,8 +62,10 @@ flowchart LR
 ```
 
 The _Single Partner Private_ repository is a git repository shared between a single external partner and Microsoft. It must only store **Idea** and **Draft** proposals which are not yet ready to be shared with wider audiences. Each partner must have their own repository, which Microsoft will create when a partner joins the project area.
+> Consider clarifying that IHVs are responsible for syncing this repo with upstream updates as they see fit, such as if a new proposal builds on an existing one or references it.
 
 The _All Partner Shared_ repository is a git repository shared between all external partners who have signed IP agreements with Microsoft to participate in a given project area.
+> I assume the intent here is this is a superset of the public repo.  So updates to an existing spec can live here until ready to go public.
 
 The _Public_ repository is a git repository hosted publicly on GitHub.
 
@@ -78,6 +81,7 @@ All proposals are introduced in the **Idea** state regardless of how complete th
 When a partner contributes an **Idea** to a single partner private repository the idea can only progress as far as the **Draft** state. When the authoring partner and Microsoft agree, a **Draft** proposal may be moved to either the all partner shared repository or the public repository for further development.
 
 When a proposal moves from one repository to a more open repository, the source of truth for that proposal becomes the most open version of it, and development on the more private version ceases. Moving from a single partner private repository to the all partner shared repository may drop the proposal's history, but moving from the all partner shared repository to the public repository must retain all document history.
+> There can be value in tracking private IHV details that can affect a design.  Typically that just ends up in email threads / Teams chats / meeting transcripts.  But the private repo might be a reasonable option to store some of this even if a proposal has moved to a more open repo.  The more open proposal is the truth (assuming proposal contents diverge), but IHV details could still be documented in private.
 
 Proposals in **Idea** and **Draft** state live under the `proposals/ideas` subfolder of the repository, and proposals that reach a terminal state (**Complete**, **Withdrawn**, **Superseded**, or **Rejected**) are moved to the `proposals/archive` subfolder.
 
@@ -111,6 +115,10 @@ stateDiagram-v2
 ```
 
 The normal path is **Idea**, **Draft**, **Review**, **Accepted**, **Implementing**, and **Complete**. **Withdrawn**, **Rejected**, and **Superseded** are terminal dispositions rather than steps on the normal path.
+
+> Can the "Rejected" state just be "Withdrawn"?  "Rejected" sounds more severe, but is the distinction really important?  Regardless, I'd expect some documentation of the reason and that should suffice.  "Superseded" does seem meaningfully different than "Withdrawn".
+
+> Could we allow the option to start at draft?  In the spirit of allowing ideas to germinate without Microsoft having to gate them first.  This is what a lot of IHV proposals look like, or at least somewhere between how "idea" and "draft" are defined, but closer to "draft that still needs some polish if it's promising".  Otherwise, requiring an "idea" step might result in retroactively generating an "idea" to satisfy our process, with draft already in the back pocket, and we might as well just see all the details so far ASAP.
 
 ## Active states
 
@@ -156,14 +164,17 @@ The normal path is **Idea**, **Draft**, **Review**, **Accepted**, **Implementing
 **Requirements:**
 
 - A stable revision of the proposal under review.
+  > What's the significance of "stable"?  Is the point that everyone is reviewing the same thing? Even so, I imagine during the review there are refinements, and everyone can follow along.  This applies to other states like draft as well.
 - A record of feedback and resolutions.
 - An architectural review by technical leads with a documented decision recorded in the proposal.
 - An agreed-upon response deadline for feedback.
+> The deadline concept should allow for fluidity, particularly while iterating.  If a subset of stakeholders have given sufficient feedback to warrant changes before all have chimed in, it can be worth making the call to move forward addressing the feedback if it looks like it would be durable, so that the latest best incarnation of the proposal is what everyone is looking at before formal consensus on the revision.  It might mean reverting/reworking a change if later feedback reveals a problem, and it's possible the appearance of the faulty change motivated the partner to give the necessary feedback sooner than they might have otherwise.  Maybe your intent in this doc isn't to dictate the specifics around deadlines, in which case all I'd ask is the wording softens somehow.
 
 **Exit to Accepted when:**
 
 - The stakeholders reach consensus that the proposal is ready to advance.
 - Microsoft leadership have agreed to staff implementation, and (if required) at least two hardware vendors have agreed to staff implementation.
+
 ### Accepted
 
 **Purpose:** Record agreement on the technical direction enabling implementation planning.
@@ -206,6 +217,7 @@ The normal path is **Idea**, **Draft**, **Review**, **Accepted**, **Implementing
 **Exit to Complete when:**
 
 - At least two retail vendor implementations are available for users.
+> Should be allowed to go from implementing straight to retail as long as there's consensus with the stakeholders before or during implementation.
 
 ### Complete
 
