@@ -155,7 +155,7 @@ The normal path is **Idea**, **Draft**, **Review**, **Accepted**, **Implementing
 
 **Requirements:**
 
-- A stable (no expected large chnages) revision of the proposal under review.
+- A stable (no expected large changes) revision of the proposal under review.
 - A record of feedback and resolutions.
 - An architectural review by technical leads with a documented decision recorded in the proposal.
 - An agreed-upon response target deadline for feedback.
