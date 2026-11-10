@@ -20,7 +20,7 @@ Prior to this process teams have used formal and informal documents to capture i
 
 | Term | Audience | Purpose | Location |
 |------|----------|-------------|----------|
-| Proposal | Implementers and stakeholders | Drives experimentation and development of a feature as an evolving and living document. Proivides visibility and alignment while enabling collaboration and feedback through the development cycle. | May live in the public or all partner shared proposal repositories. |
+| Proposal | Implementers and stakeholders | Drives experimentation and development of a feature as an evolving and living document. Provides visibility and alignment while enabling collaboration and feedback through the development cycle. | May live in the public or all partner shared proposal repositories. |
 | Specification | Implementers and experienced users | Provides a detailed, finalized, authoritative reference for the behavior of a feature. | May be maintained in team-specific locations or the shared public repository. In-progress specifications may also be maintained in private repositories. |
 | User Guide | End users | Explains how to use a feature or set of features. | May be maintained in team-specific locations; the default location is learn.microsoft.com. |
 | Samples | End users | Code examples and sample projects that demonstrate how to use a feature or set of features. | May be maintained in team-specific locations; the default location is the DirectX-Samples repository. |
@@ -60,9 +60,9 @@ flowchart LR
     A[Single Partner Private] --> B[All Partner Shared] --> C[Public]
 ```
 
-The _Single Partner Private_ repository is a git repository shared between a single external partner and Microsoft. It must only store **Idea** and **Draft** proposals which are not yet ready to be shared with wider audiences. Each partner must have their own repository, which Microsoft will create when a partner joins the project area.
+The _Single Partner Private_ repository is a git repository shared between a single external partner and Microsoft. It must only store **Idea** and **Draft** proposals which are not yet ready to be shared with wider audiences. Each partner must have their own repository, which Microsoft will create when a partner joins the project area. Maintenance of the repository is left to the individual partner.
 
-The _All Partner Shared_ repository is a git repository shared between all external partners who have signed IP agreements with Microsoft to participate in a given project area.
+The _All Partner Shared_ repository is a git repository shared between all external partners who have signed IP agreements with Microsoft to participate in a given project area. This will be a fork of the _Public_ repository maintained by tooling.
 
 The _Public_ repository is a git repository hosted publicly on GitHub.
 
@@ -155,15 +155,16 @@ The normal path is **Idea**, **Draft**, **Review**, **Accepted**, **Implementing
 
 **Requirements:**
 
-- A stable revision of the proposal under review.
+- A stable (no expected large chnages) revision of the proposal under review.
 - A record of feedback and resolutions.
 - An architectural review by technical leads with a documented decision recorded in the proposal.
-- An agreed-upon response deadline for feedback.
+- An agreed-upon response target deadline for feedback.
 
 **Exit to Accepted when:**
 
 - The stakeholders reach consensus that the proposal is ready to advance.
 - Microsoft leadership have agreed to staff implementation, and (if required) at least two hardware vendors have agreed to staff implementation.
+
 ### Accepted
 
 **Purpose:** Record agreement on the technical direction enabling implementation planning.
